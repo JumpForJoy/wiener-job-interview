@@ -1,0 +1,1 @@
+export { PlanetsShow } from "./show";

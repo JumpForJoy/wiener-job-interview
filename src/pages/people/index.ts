@@ -1,0 +1,1 @@
+export { PeopleShow } from "./show";

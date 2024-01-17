@@ -1,0 +1,1 @@
+export { SpeciesShow } from "./show";

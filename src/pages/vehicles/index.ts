@@ -1,0 +1,1 @@
+export { VehiclesShow } from "./show";

@@ -1,0 +1,1 @@
+export { StarshipsShow } from "./show";
