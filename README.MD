@@ -2,7 +2,7 @@
 
 <div align="center" style="margin: 30px;">
     <a href="https://refine.dev">
-    <img alt="refine logo" src="https://refine.ams3.cdn.digitaloceanspaces.com/readme/refine-readme-banner.png">
+    <img alt="refine logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2560px-Star_Wars_Logo.svg.png">
     </a>
 </div>
 <br/>
@@ -11,39 +11,37 @@ This [Refine](https://github.com/refinedev/refine) project was generated with [c
 
 ## Getting Started
 
-A React Framework for building internal tools, admin panels, dashboards & B2B apps with unmatched flexibility ✨
+Welcome to Mario Todorov's test task for Wiener.
 
-Refine's hooks and components simplifies the development process and eliminates the repetitive tasks by providing industry-standard solutions for crucial aspects of a project, including authentication, access control, routing, networking, state management, and i18n.
+To start the project please follow the steps below:
 
-## Available Scripts
+1. Get the repository and checkout the 'master' branch
 
-### Running the development server.
-
-```bash
-    yarn dev
-```
-
-### Building for production.
+1. Build the project
 
 ```bash
     yarn build
 ```
 
-### Running the production server.
+3. Run the project in preview mode
 
 ```bash
-    yarn start
+    yarn preview
 ```
 
-## Learn More
+4. Open the project in a browser
 
-To learn more about **Refine**, please check out the [Documentation](https://refine.dev/docs)
+After a successful start a link will appear in the terminal.
+Click the link to open in a browser.
 
-- **REST Data Provider** [Docs](https://refine.dev/docs/core/providers/data-provider/#overview)
-- **Material UI** [Docs](https://refine.dev/docs/ui-frameworks/mui/tutorial/)
-- **Inferencer** [Docs](https://refine.dev/docs/packages/documentation/inferencer)
-- **React Router** [Docs](https://refine.dev/docs/core/providers/router-provider/)
+Example:
 
-## License
+```bash
+    ➜  Local:   http://localhost:4173/
+```
 
-MIT
+5. If you need to start the dev server run the following (no need to build):
+
+```bash
+    yarn dev
+```
