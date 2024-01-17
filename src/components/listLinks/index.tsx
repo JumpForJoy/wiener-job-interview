@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
 import { useGo } from "@refinedev/core";
+import { SvgIconTypeMap } from "@mui/material/SvgIcon";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
 import Chip from "@mui/material/Chip";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import GroupsIcon from "@mui/icons-material/Groups";
@@ -13,13 +14,15 @@ import { getId } from "../../utils";
 
 import { Text } from "../text";
 
-const iconMap: { [Key in ResourcesType as string]: ReactNode } = {
-  planets: <TravelExploreIcon />,
-  people: <GroupsIcon />,
-  species: <AdbIcon />,
-  vehicles: <SnowmobileIcon />,
-  starships: <RocketLaunchIcon />,
-  films: <LiveTvIcon />,
+const iconMap: {
+  [Key in ResourcesType as string]: OverridableComponent<SvgIconTypeMap>;
+} = {
+  planets: TravelExploreIcon,
+  people: GroupsIcon,
+  species: AdbIcon,
+  vehicles: SnowmobileIcon,
+  starships: RocketLaunchIcon,
+  films: LiveTvIcon,
 };
 
 export type TListLinks = {
@@ -37,19 +40,21 @@ export const ListLinks: React.FC<TListLinks> = ({
   const Icon = iconMap[resources];
 
   return Array.isArray(links) && links.length ? (
-    links?.map((link: string, index: number) => {
-      const id = getId(link);
+    <>
+      {links?.map((link: string, index: number) => {
+        const id = getId(link);
 
-      return (
-        <Chip
-          key={index}
-          clickable
-          icon={Icon}
-          label={`${label} ${id}`}
-          onClick={() => go({ to: `/${resources}/${id}` })}
-        />
-      );
-    })
+        return (
+          <Chip
+            key={index}
+            clickable
+            icon={<Icon />}
+            label={`${label} ${id}`}
+            onClick={() => go({ to: `/${resources}/${id}` })}
+          />
+        );
+      })}
+    </>
   ) : (
     <Text value="-" />
   );

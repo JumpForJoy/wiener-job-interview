@@ -5,6 +5,7 @@ export const generateFilter = (filters?: CrudFilters) => {
     return;
   }
 
+  // @ts-expect-error TODO Should be checked why 'field' is not accepted
   const value = filters.find(({ field }) => field === "q")?.value;
 
   if (value && value.length > 0) {

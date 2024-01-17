@@ -1,10 +1,10 @@
 import { useState } from "react";
 
+import { CrudFilters } from "@refinedev/core";
 import { List as ListComponent, ShowButton, useDataGrid } from "@refinedev/mui";
 import { DataGrid, GridColDef, GridFilterModel } from "@mui/x-data-grid";
 
 import { Search } from "../components/search";
-import { config } from "../components/config";
 import { FavButton } from "../components/favButton";
 
 export const List = () => {
@@ -13,7 +13,14 @@ export const List = () => {
     quickFilterValues: [],
   });
   const { dataGridProps, filters, search } = useDataGrid({
-    ...config,
+    pagination: { pageSize: 10, current: 1, mode: "server" },
+    onSearch: (params: { q: string }) => {
+      const filters: CrudFilters = [];
+
+      filters.push({ field: "q", operator: "eq", value: params?.q });
+
+      return filters;
+    },
   });
 
   /**
